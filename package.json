@@ -1,0 +1,16 @@
+{
+  "name": "tinytoolbox",
+  "version": "0.0.1",
+  "description": "A really small toolbox, you get it... right?",
+  "main": "toolbox.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jylescoad-ward/toolbox.git"
+  },
+  "author": "Jyles Coad-Ward (https://jyles.club)",
+  "license": "GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/jylescoad-ward/toolbox/issues"
+  },
+  "homepage": "https://github.com/jylescoad-ward/toolbox#readme"
+}
