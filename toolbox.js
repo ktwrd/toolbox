@@ -26,7 +26,7 @@ module.exports = {
 				case "number":
 				case "bigint":
 				case "string":
-					return btoa(input)
+					return btoa(`${input}`)
 				default:
 					try {
 						return btoa(JSON.stringify(input))
@@ -65,6 +65,7 @@ module.exports = {
 			return converted;
 		}
 	},
+	JSON: require("./json.js"),
 	isJSON: (input) => {
 		if (/^[\],:{}\s]*$/.test(input.replace(/\\["\\\/bfnrtu]/g, '@').
 		replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
@@ -77,22 +78,22 @@ module.exports = {
 	},
 	isInt: (input) => {
 		const lookup = /^[0-9]+$/;
-		if (input.value.match(numbers)) return true;
+		if (input.value.match(lookup)) return true;
 		return false;
 	},
 	stringGen: (g_length,g_charsetType,g_charset) => {
 		const charsetLookup = [
-			"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=\;',./`!@#$%^&*()_+|:?><",
-			"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=/!@#$",
-			"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$",
-			"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-			"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
-			"abcdefghijklmnopqrstuvwxyz",
-			"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-			"1234567890",
-			"-=\;',./`!@#$%^&*()_+|:?><",
-			"-=/!@#$",
-			"!@#$",
+			"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=\;',./`!@#$%^&*()_+|:?><", // 0
+			"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=/!@#$", // 1
+			"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$", // 2
+			"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", // 3
+			"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", // 4
+			"abcdefghijklmnopqrstuvwxyz", // 5
+			"ABCDEFGHIJKLMNOPQRSTUVWXYZ", // 6
+			"1234567890", // 7
+			"-=\;',./`!@#$%^&*()_+|:?><", // 8
+			"-=/!@#$", // 9
+			"!@#$", // 10
 		]
 		var charsetType = g_charsetType || 3;
 		var length = g_length || 12;
