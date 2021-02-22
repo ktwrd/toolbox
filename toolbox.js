@@ -103,6 +103,30 @@ module.exports = {
 		}
 		return string;
 	},
+	validModule: (file) =>
+	{
+		var fs = require("fs")
+		var result;
+		var content;
+		var rex = /(?:^|\s*;|\s*=)\s*(?:module\.)*exports(\..+)*\s*=\s*.+/gm;
+
+		try {
+			content = fs.readFileSync(filename).toString();
+		} catch (err) {
+			content = '';
+			throw err;
+		}
+		result = content.match(rex) ? true : false;
+		if (result) {
+		try {
+			var temp = require(filename);
+		} catch (err) {
+			result = false;
+			throw err;
+		}
+		}
+		return result;
+	},
 	JSON: require("./tools/json.js"),
 	async: require("./tools/async.js"),
 	queue: require("./tools/queue.js")
