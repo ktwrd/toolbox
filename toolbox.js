@@ -65,7 +65,6 @@ module.exports = {
 			return converted;
 		}
 	},
-	JSON: require("./json.js"),
 	isJSON: (input) => {
 		if (/^[\],:{}\s]*$/.test(input.replace(/\\["\\\/bfnrtu]/g, '@').
 		replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
@@ -104,5 +103,7 @@ module.exports = {
 		}
 		return string;
 	},
+	JSON: require("./tools/json.js"),
+	async: require("./tools/async.js"),
 	queue: require("./tools/queue.js")
 }
