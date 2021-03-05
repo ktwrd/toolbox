@@ -103,7 +103,7 @@ module.exports = {
 		}
 		return string;
 	},
-	validModule: (file) =>
+	validModule: (filename) =>
 	{
 		var fs = require("fs")
 		var result;
