@@ -12,6 +12,13 @@ module.exports = {
 	},
 	b64: {
 		to: (input) => {
+			return Buffer.from(input, 'binary').toString('base64');
+		},
+		from: (input) => {
+			return Buffer.from(input, 'base64').toString('binary')
+		},
+		/*
+		to: (input) => {
 			// Converts from b64 to string or JSON
 
 			switch (typeof input)
@@ -64,6 +71,7 @@ module.exports = {
 			}
 			return converted;
 		}
+		*/
 	},
 	isJSON: (input) => {
 		if (/^[\],:{}\s]*$/.test(input.replace(/\\["\\\/bfnrtu]/g, '@').
