@@ -137,5 +137,6 @@ module.exports = {
 	},
 	JSON: require("./tools/json.js"),
 	async: require("./tools/async.js"),
-	queue: require("./tools/queue.js")
+	queue: require("./tools/queue.js"),
+	arrayTreeToString: require("./tools/arrayTreeToPath.js.js")
 }
