@@ -1,7 +1,7 @@
 module.exports = 
 {
-	toArray: (input) =>
-	{
-		return Object.entries(input)
-	}
+    toArray: (input) =>
+    {
+        return Object.entries(input)
+    }
 }
