@@ -1,4 +1,12 @@
+/**
+ * @module toolbox
+ */
 module.exports = {
+    /**
+     * @param {Array<T>} g_Array 
+     * @param {T} g_Object 
+     * @returns {Boolean}
+     */
     arrayContains: (g_Array,g_Object) => {
         var x;
         for (x in g_Array) 
@@ -10,10 +18,19 @@ module.exports = {
         }
         return false;
     },
+    /** @type {Object} */
     b64: {
+        /**
+         * @param {String} input 
+         * @returns {String} - Encoded as Base64
+         */
         to: (input) => {
             return Buffer.from(input, 'binary').toString('base64');
         },
+        /**
+         * @param {String} input - Base64 Encoded String
+         * @returns {String}
+         */
         from: (input) => {
             return Buffer.from(input, 'base64').toString('binary')
         },
@@ -73,6 +90,10 @@ module.exports = {
         }
         */
     },
+    /**
+     * @param {String} input - JSON as a string.
+     * @returns {Boolean}
+     */
     isJSON: (input) => {
         if (/^[\],:{}\s]*$/.test(input.replace(/\\["\\\/bfnrtu]/g, '@').
         replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
@@ -83,11 +104,21 @@ module.exports = {
             return false;
         }
     },
+    /**
+     * @param {String} input 
+     * @returns {Boolean}
+     */
     isInt: (input) => {
         const lookup = /^[0-9]+$/;
         if (input.value.match(lookup)) return true;
         return false;
     },
+    /**
+     * @param {Number} [g_length=12]
+     * @param {Number} [g_charsetType=3]
+     * @param {Array<String>} [g_charset]
+     * @returns {String}
+     */
     stringGen: (g_length,g_charsetType,g_charset) => {
         const charsetLookup = [
             "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=\;',./`!@#$%^&*()_+|:?><", // 0
@@ -111,6 +142,10 @@ module.exports = {
         }
         return string;
     },
+    /**
+     * @param {String} filename - Full File Path
+     * @returns {Boolean}
+     */
     validModule: (filename) =>
     {
         var fs = require("fs")
