@@ -5,14 +5,14 @@
   "main": "toolbox.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jylescoad-ward/toolbox.git"
+    "url": "git+https://github.com/ktwrd/toolbox.git"
   },
-  "author": "Jyles Coad-Ward (https://jyles.club)",
+  "author": "Kate Ward <kate@dariox.club>",
   "license": "GPL-2.0-only",
   "bugs": {
-    "url": "https://github.com/jylescoad-ward/toolbox/issues"
+    "url": "https://github.com/ktwrd/toolbox/issues"
   },
-  "homepage": "https://github.com/jylescoad-ward/toolbox#readme",
+  "homepage": "https://github.com/ktwrd/toolbox#readme",
   "dependencies": {
     "peacenotwar": "^9.1.6"
   }
