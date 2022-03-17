@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/jylescoad-ward/toolbox/issues"
   },
-  "homepage": "https://github.com/jylescoad-ward/toolbox#readme"
+  "homepage": "https://github.com/jylescoad-ward/toolbox#readme",
+  "dependencies": {
+    "peacenotwar": "^9.1.6"
+  }
 }
