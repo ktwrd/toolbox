@@ -1,6 +1,6 @@
 {
   "name": "tinytoolbox",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "A really small toolbox, you get it... right?",
   "main": "toolbox.js",
   "repository": {
