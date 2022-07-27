@@ -10,7 +10,6 @@ module.exports = {
         for (let i = 0; i < process.argv.length; i++) {
             if (process.argv[i].startsWith(`--${key}`)) {
                 let withoutKey = process.argv[i].substring(`--${key}`.length)
-                console.log(process.argv[i] + ' -> ', withoutKey)
                 if (withoutKey.substring(0, 1) == '=')
                     return withoutKey.substring(1)
             }
@@ -18,7 +17,7 @@ module.exports = {
         return ''
     },
     toObject (argv) {
-        if (argv == undefined || typeof argv != 'object' || !(argv instanceof Array))
+        if (argv == undefined || typeof argv != 'object')
             argv = process.argv
         let content = {}
         for (let i = 0; i < process.argv.length; i++) {
@@ -26,7 +25,6 @@ module.exports = {
             let sw = process.argv[i].split('=')[0]
             if (process.argv[i].startsWith(sw)) {
                 let withoutKey = process.argv[i].substring(sw.length)
-                console.log(process.argv[i] + ' -> ', withoutKey)
                 let value = true
                 let key = sw.substring(2)
                 if (withoutKey.substring(0, 1) == '=') {
