@@ -1,15 +1,19 @@
 module.exports = {
-    hasSwitch (key) {
-        for (let i = 0; i < process.argv.length; i++) {
-            if (process.argv[i].startsWith(`--${key}`))
+    hasSwitch (key, argv) {
+        if (argv == undefined || typeof argv != 'object')
+            argv = process.argv
+        for (let i = 0; i < argv.length; i++) {
+            if (argv[i].startsWith(`--${key}`))
                 return true
         }
         return false
     },
-    getSwitchValue (key) {
-        for (let i = 0; i < process.argv.length; i++) {
-            if (process.argv[i].startsWith(`--${key}`)) {
-                let withoutKey = process.argv[i].substring(`--${key}`.length)
+    getSwitchValue (key, argv) {
+        if (argv == undefined || typeof argv != 'object')
+            argv = process.argv
+        for (let i = 0; i < argv.length; i++) {
+            if (argv[i].startsWith(`--${key}`)) {
+                let withoutKey = argv[i].substring(`--${key}`.length)
                 if (withoutKey.substring(0, 1) == '=')
                     return withoutKey.substring(1)
             }
@@ -20,11 +24,11 @@ module.exports = {
         if (argv == undefined || typeof argv != 'object')
             argv = process.argv
         let content = {}
-        for (let i = 0; i < process.argv.length; i++) {
-            if (!process.argv[i].startsWith('--')) continue
-            let sw = process.argv[i].split('=')[0]
-            if (process.argv[i].startsWith(sw)) {
-                let withoutKey = process.argv[i].substring(sw.length)
+        for (let i = 0; i < argv.length; i++) {
+            if (!argv[i].startsWith('--')) continue
+            let sw = argv[i].split('=')[0]
+            if (argv[i].startsWith(sw)) {
+                let withoutKey = argv[i].substring(sw.length)
                 let value = true
                 let key = sw.substring(2)
                 if (withoutKey.substring(0, 1) == '=') {
