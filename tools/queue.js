@@ -65,16 +65,12 @@ class queue {
         this._log(`COMPLETED ${this.storage.items.length} TASKS IN ${(this.storage.queueDuration/1000).toFixed(2)} SECONDS`);
         if (callBack != undefined) {
             callBack(this.storage);
-        } else {
-            return this.storage;
         }
+        return this.storage;
     }
     dump (callBack) {
-        if (callBack == undefined) {
-            return this.storage;
-        } else {
-            callBack(this.storage);
-        }
+        callBack(this.storage);
+        return this.storage;
     }
 }
 

@@ -1,16 +1,17 @@
 {
-  "name": "tinytoolbox",
-  "version": "0.0.13",
-  "description": "A really small toolbox, you get it... right?",
-  "main": "toolbox.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ktwrd/toolbox.git"
-  },
-  "author": "Kate Ward <kate@dariox.club>",
-  "license": "GPL-2.0-only",
-  "bugs": {
-    "url": "https://github.com/ktwrd/toolbox/issues"
-  },
-  "homepage": "https://github.com/ktwrd/toolbox#readme"
+    "name": "tinytoolbox",
+    "version": "0.0.16",
+    "description": "A really small toolbox, you get it... right?",
+    "main": "toolbox.js",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ktwrd/toolbox.git"
+    },
+    "author": "Kate Ward <kate@dariox.club>",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/ktwrd/toolbox/issues"
+    },
+    "homepage": "https://github.com/ktwrd/toolbox#readme"
 }
