@@ -24,25 +24,21 @@ export declare enum StringGenCharsetType
 export declare function stringGen(
     length: number,
     charsetType: StringGenCharsetType,
-    charset?: string)
+    charset?: string): string
 export declare function validModule(location: string): boolean
 
 export * as JSON from './tools/json'
 export * as async from './tools/async'
-export * as queue from './tools/queue'
+import type * as _queue from './tools/queue'
 
+export declare type queue = _queue
 export declare interface IQueueConfig
 {
     threads: number,
     log: boolean,
     prefix: string
 }
-export declare const DefaultIQueueConfig: IQueueConfig = 
-{
-    threads: 1,
-    log: false,
-    prefix: '[cacheQueue]'
-}
+export declare const DefaultIQueueConfig: IQueueConfig
 export declare interface IQueueMessage
 {
     timestamp: EpochTimeStamp,

@@ -1,3 +1,12 @@
+function enumGenerate (arr) {
+    let e = {}
+    for (let index in arr)
+    {
+        e[index] = arr[index]
+        e[arr[index]] = index
+    }
+    return e
+}
 /**
  * @module toolbox
  */
@@ -170,9 +179,41 @@ module.exports = {
         }
         return result;
     },
+    enumGenerate (arr) {
+        let e = {}
+        for (let index in arr)
+        {
+            e[index] = arr[index]
+            e[arr[index]] = index
+        }
+        return e
+    },
     JSON: require("./tools/json.js"),
     async: require("./tools/async.js"),
     queue: require("./tools/queue.js"),
     arrayTreeToPath: require("./tools/arrayTreeToPath.js"),
-    argumentParser: require('./tools/argumentParser')
+    argumentParser: require('./tools/argumentParser'),
+
+    get StringGenCharsetType() {
+        return enumGenerate([
+            'AlphaNumericSpecialExtended',
+            'AlphaNumericSpecial',
+            'AlphaNumericSpecialSafe',
+            'AlphaNumeric',
+            'Alpha',
+            'AlphaLower',
+            'AlphaUpper',
+            'Numeric',
+            'SpecialExtended',
+            'Special',
+            'SpecialSafe'
+        ])
+    },
+    get DefaultIQueueConfig() {
+        return {
+            threads: 1,
+            log: false,
+            prefix: '[cacheQueue]'
+        }
+    }
 }
