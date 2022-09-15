@@ -1,6 +1,6 @@
 {
     "name": "tinytoolbox",
-    "version": "0.0.17",
+    "version": "0.0.18",
     "description": "A really small toolbox, you get it... right?",
     "main": "toolbox.js",
     "types": "index.d.ts",
