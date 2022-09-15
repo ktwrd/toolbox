@@ -37,12 +37,7 @@ export declare interface IQueueConfig
     log: boolean,
     prefix: string
 }
-export declare const DefaultIQueueConfig: IQueueConfig = 
-{
-    threads: 1,
-    log: false,
-    prefix: '[cacheQueue]'
-}
+export declare const DefaultIQueueConfig: IQueueConfig
 export declare interface IQueueMessage
 {
     timestamp: EpochTimeStamp,

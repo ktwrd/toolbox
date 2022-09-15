@@ -1,1 +1,1 @@
-export declare function toArray<K, V>(input: {[key: K]: V}): [K, V][]
+export declare function toArray<K, V>(input: any): [K, V][]
