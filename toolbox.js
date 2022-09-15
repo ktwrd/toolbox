@@ -1,3 +1,13 @@
+function enumGenerate(items) {
+    let obj = {}
+    for (let i = 0; i < items.length; i++)
+    {
+        obj[items[i]] = i
+        obj[i] = items[i]
+    }
+    return obj
+}
+
 /**
  * @module toolbox
  */
@@ -169,6 +179,29 @@ module.exports = {
         }
         }
         return result;
+    },
+    enumGenerate,
+    get StringGenCharsetType() {
+        return enumGenerate([
+            'AlphaNumericSpecialExtended',
+            'AlphaNumericSpecial',
+            'AlphaNumericSpecialSafe',
+            'AlphaNumeric',
+            'Alpha',
+            'AlphaLower',
+            'AlphaUpper',
+            'Numeric',
+            'SpecialExtended',
+            'Special',
+            'SpecialSafe'
+        ])
+    },
+    get DefaultIQueueConfig() {
+        return {
+            threads: 1,
+            log: false,
+            prefix: '[cacheQueue]'
+        }
     },
     JSON: require("./tools/json.js"),
     async: require("./tools/async.js"),
