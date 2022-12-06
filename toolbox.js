@@ -1,12 +1,13 @@
-function enumGenerate (arr) {
-    let e = {}
-    for (let index in arr)
+function enumGenerate(items) {
+    let obj = {}
+    for (let i = 0; i < items.length; i++)
     {
-        e[index] = arr[index]
-        e[arr[index]] = index
+        obj[items[i]] = i
+        obj[i] = items[i]
     }
-    return e
+    return obj
 }
+
 /**
  * @module toolbox
  */
@@ -179,15 +180,7 @@ module.exports = {
         }
         return result;
     },
-    enumGenerate (arr) {
-        let e = {}
-        for (let index in arr)
-        {
-            e[index] = arr[index]
-            e[arr[index]] = index
-        }
-        return e
-    },
+    enumGenerate,
     JSON: require("./tools/json.js"),
     async: require("./tools/async.js"),
     queue: require("./tools/queue.js"),
